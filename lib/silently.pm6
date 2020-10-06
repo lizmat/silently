@@ -1,8 +1,8 @@
-use nqp;
-
-my class Captured {
+class Captured:auth<cpan:ELIZABETH>:ver<0.0.1> {
     has $!out;
     has $!err;
+
+    use nqp;  # intended to be part of Rakudo core
 
     my class Capturer {
         has $!text;

@@ -17,7 +17,8 @@
   "resources": [
   ],
   "source-url": "https://github.com/lizmat/production.git",
-  "tags": [ "OUTPUT"
+  "tags": [
+    "OUTPUT"
   ],
   "test-depends": [
   ],
