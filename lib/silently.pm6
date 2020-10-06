@@ -22,7 +22,7 @@ class Captured:auth<cpan:ELIZABETH>:ver<0.0.1> {
         }
 
         method text(--> str) {
-            nqp::join("\n",nqp::split("\r\n",nqp::join('',$!text)))
+            nqp::join('',$!text)
         }
     }
 
