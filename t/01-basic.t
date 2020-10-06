@@ -1,7 +1,7 @@
 use Test;
 use silently;
 
-plan 4;
+plan 5;
 
 my $out-pos = $*OUT.tell;
 silently {
@@ -28,8 +28,7 @@ my $captured = silently {
 is $captured.out.lines.join(chr(10)),
   "hello world\nzippodak: 666",
   'OUT captured ok';
-is $captured.err.lines.join(chr(10)),
-  "shitty\nbleh\n  in block  at t/01-basic.t line 24",
-  'ERR captured ok';
+ok $captured.err.contains('shitty'), 'ERR captured ok (1)';
+ok $captured.err.contains('bleh'),   'ERR captured ok (2)';
 
 # vim: expandtab shiftwidth=4
