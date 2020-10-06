@@ -21,7 +21,9 @@ class Captured:auth<cpan:ELIZABETH>:ver<0.0.1> {
             nqp::push_s($!text,sprintf($format,@_))
         }
 
-        method text(--> str) { nqp::join('',$!text) }
+        method text(--> str) {
+            nqp::join("\n",nqp::split("\r\n",nqp::join('',$!text)))
+        }
     }
 
     method SET-SELF(\out, \err) {
