@@ -25,11 +25,11 @@ my $captured = silently {
     printf "zippodak: %d", 666;
 }
 
-is $captured.out.subst( "\r\n", "\n", :g),
+is $captured.out.lines.join(chr(10)),
   "hello world\nzippodak: 666",
   'OUT captured ok';
-is $captured.err.subst( "\r\n", "\n", :g),
-  "shitty\nbleh\n  in block  at t/01-basic.t line 24\n",
+is $captured.err.lines.join(chr(10)),
+  "shitty\nbleh\n  in block  at t/01-basic.t line 24",
   'ERR captured ok';
 
 # vim: expandtab shiftwidth=4
