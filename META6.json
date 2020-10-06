@@ -1,0 +1,25 @@
+{
+  "auth": "cpan:ELIZABETH",
+  "authors": [
+    "Elizabeth Mattijsen"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "prevent any output from a block",
+  "license": "Artistic-2.0",
+  "name": "silently",
+  "perl": "6.c",
+  "provides": {
+    "silently": "lib/silently.pm6"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/production.git",
+  "tags": [ "OUTPUT"
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}
