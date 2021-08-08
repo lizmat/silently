@@ -1,4 +1,4 @@
-class Captured:auth<cpan:ELIZABETH>:ver<0.0.2> {
+class Captured:auth<cpan:ELIZABETH>:ver<0.0.3> {
     has $!out;
     has $!err;
 

@@ -2,6 +2,9 @@ Revision history for silently
 
 {{$NEXT}}
 
+0.0.3  2021-08-08T17:56:10+02:00
+    - Fix source-url in META
+
 0.0.2  2020-10-06T13:28:57+02:00
     - Make sure CRLF is handled as LF on Windows in tests
 
