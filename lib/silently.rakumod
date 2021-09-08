@@ -1,4 +1,9 @@
-class Captured:auth<cpan:ELIZABETH>:ver<0.0.3> {
+use v6.d;
+
+my
+class silently:ver<0.0.4>:auth<zef:lizmat> { }  # just for mi6
+
+class Captured {
     has $!out;
     has $!err;
 
@@ -86,14 +91,14 @@ output to C<$*OUT> and C<$*ERR> respectively.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/silently . Comments and
 Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2020 Elizabeth Mattijsen
+Copyright 2020, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
