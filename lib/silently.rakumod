@@ -1,9 +1,4 @@
-use v6.d;
-
-my
-class silently:ver<0.0.4>:auth<zef:lizmat> { }  # just for mi6
-
-class Captured {
+my class Captured {
     has $!out;
     has $!err;
 
