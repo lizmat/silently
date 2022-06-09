@@ -1,37 +1,15 @@
+use Trap:auth<zef:lizmat>:ver<0.0.1>;
+
 my class Captured {
     has $!out;
     has $!err;
 
-    use nqp;  # intended to be part of Rakudo core
-
-    my class Capturer {
-        has $!text;
-
-        method new() {
-            nqp::p6bindattrinvres(nqp::create(self),self,'$!text',nqp::list_s)
-        }
-
-        method print(*@_ --> True) {
-            nqp::push_s($!text,@_.join)
-        }
-        method say(*@_ --> True) {              # older versions of Raku
-            nqp::push_s($!text,nqp::concat(@_.join,"\n"))
-        }
-        method printf($format, *@_ --> True) {  # older versions of Raku
-            nqp::push_s($!text,sprintf($format,@_))
-        }
-
-        method text(--> str) {
-            nqp::join('',$!text)
-        }
-    }
-
     method SET-SELF(\out, \err) {
-        out = $!out := Capturer.new;
-        err = $!err := Capturer.new;
+        out = $!out := Trap.new;
+        err = $!err := Trap.new;
         self
     }
-    method new(\out, \err) { nqp::create(self).SET-SELF(out, err) }
+    method new(\out, \err) { self.CREATE.SET-SELF(out, err) }
 
     method out(--> str) { $!out.text }
     method err(--> str) { $!err.text }
@@ -60,8 +38,8 @@ use silently;
 =head1 DESCRIPTION
 
 silently is module that exports a single sub called C<silently> that takes
-a block to execute.  Inside that block, all textual output to $*OUT and $*ERR
-is prevented from actually being sent to STDOUT and STDERR.
+a block to execute.  Inside that block, all textual output to C<$*OUT> and
+C<$*ERR> is prevented from actually being sent to STDOUT and STDERR.
 
 Note that if you're only interested in surpressing output from warnings,
 you should use the C<quietly> statement prefix.
@@ -91,9 +69,13 @@ Elizabeth Mattijsen <liz@raku.rocks>
 Source can be located at: https://github.com/lizmat/silently . Comments and
 Pull Requests are welcome.
 
+If you like this module, or what I’m doing more generally, committing to a
+L<small sponsorship|https://github.com/sponsors/lizmat/>  would mean a great
+deal to me!
+
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2020, 2021 Elizabeth Mattijsen
+Copyright 2020, 2021, 2022 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

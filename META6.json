@@ -6,6 +6,7 @@
   "build-depends": [
   ],
   "depends": [
+    "Trap:auth<zef:lizmat>:ver<0.0.1>"
   ],
   "description": "prevent any output from a block",
   "license": "Artistic-2.0",
@@ -22,5 +23,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.0.5"
+  "version": "0.0.6"
 }
