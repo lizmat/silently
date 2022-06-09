@@ -15,7 +15,7 @@ use silently;
 DESCRIPTION
 ===========
 
-silently is module that exports a single sub called `silently` that takes a block to execute. Inside that block, all textual output to $*OUT and $*ERR is prevented from actually being sent to STDOUT and STDERR.
+silently is module that exports a single sub called `silently` that takes a block to execute. Inside that block, all textual output to `$*OUT` and `$*ERR` is prevented from actually being sent to STDOUT and STDERR.
 
 Note that if you're only interested in surpressing output from warnings, you should use the `quietly` statement prefix.
 
@@ -43,10 +43,12 @@ Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/silently . Comments and Pull Requests are welcome.
 
+If you like this module, or what I’m doing more generally, committing to a [small sponsorship](https://github.com/sponsors/lizmat/) would mean a great deal to me!
+
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2020, 2021 Elizabeth Mattijsen
+Copyright 2020, 2021, 2022 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
